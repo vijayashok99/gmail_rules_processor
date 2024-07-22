@@ -15,8 +15,9 @@ This Python script integrates with the Gmail API to fetch emails and process the
 1. Clone this repository:
    ```
    git clone https://github.com/yourusername/gmail-rules-processor.git
-   cd gmail-rules-processor
+   cd gmail_rules_processor
    ```
+   Paste .env file in the above mentioned root folder. (This file has the secrets. Sharing this manually as its a test project)
 
 2. Install the required packages:
    ```
@@ -32,7 +33,7 @@ This Python script integrates with the Gmail API to fetch emails and process the
 
 ## Configuration
 
-2. Update `config/rules.json` file with your desired rules.
+2. Update `config/rules.json` file with your desired rules. Supported actions are Read, Unread, move to INBOX, SPAM & TRASH
 
 ## Usage
 
@@ -41,6 +42,9 @@ Run the main script:
 ```
 python -m src.main
 ```
+
+https://github.com/user-attachments/assets/81b93e04-e8b1-48db-9297-f56db66d2696
+
 
 The script will authenticate with the Gmail API, fetch emails, store them in the database, and process them according to the defined rules.
 
