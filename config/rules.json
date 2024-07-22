@@ -1,0 +1,70 @@
+{
+  "rules": [
+    {
+      "name": "Mark old emails as unread",
+      "predicate": "ANY",
+      "conditions": [
+        {
+          "field": "subject",
+          "predicate": "contains",
+          "value": "unread"
+        },
+        {
+          "field": "received_date",
+          "predicate": "greater_than",
+          "value": "1 minute"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MARK_AS_READ"
+        }
+      ]
+    },
+    {
+      "name": "Move spam to Spam folder",
+      "predicate": "ANY",
+      "conditions": [
+        {
+          "field": "subject",
+          "predicate": "contains",
+          "value": "SPAM"
+        },
+        {
+          "field": "sender",
+          "predicate": "contains",
+          "value": "spammer.com"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MOVE_TO_SPAM"
+        }
+      ]
+    },
+    {
+      "name": "Move trash to Trash folder",
+      "predicate": "ANY",
+      "conditions": [
+        {
+          "field": "subject",
+          "predicate": "contains",
+          "value": "TRASH"
+        },
+        {
+          "field": "sender",
+          "predicate": "contains",
+          "value": "spammer.com"
+        }
+      ],
+      "actions": [
+        {
+          "type": "MARK_AS_READ"
+        },
+        {
+          "type": "MOVE_TO_TRASH"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+google-auth-oauthlib==0.4.6
+google-auth-httplib2==0.1.0
+google-api-python-client==2.47.0
+sqlalchemy==1.4.36
+pytest==7.1.2
+pymysql==1.0.2
+python-dotenv
