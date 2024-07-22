@@ -42,7 +42,7 @@ Run the main script:
 python -m src.main
 ```
 
-https://github.com/user-attachments/assets/85e004d3-9e46-4d4a-bb91-131a09eb7096
+https://github.com/user-attachments/assets/81b93e04-e8b1-48db-9297-f56db66d2696
 
 
 The script will authenticate with the Gmail API, fetch emails, store them in the database, and process them according to the defined rules.
