@@ -17,7 +17,7 @@
       ],
       "actions": [
         {
-          "type": "MARK_AS_READ"
+          "type": "MARK_AS_UNREAD"
         }
       ]
     },
