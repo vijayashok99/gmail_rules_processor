@@ -17,6 +17,7 @@ This Python script integrates with the Gmail API to fetch emails and process the
    git clone https://github.com/yourusername/gmail-rules-processor.git
    cd gmail-rules-processor
    ```
+   Paste .env file in the above mentioned root folder. (This file has the secrets. Sharing this manually as its a test project)
 
 2. Install the required packages:
    ```
