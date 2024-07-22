@@ -32,7 +32,7 @@ This Python script integrates with the Gmail API to fetch emails and process the
 
 ## Configuration
 
-2. Update `config/rules.json` file with your desired rules.
+2. Update `config/rules.json` file with your desired rules. Supported actions are Read, Unread, move to INBOX, SPAM & TRASH
 
 ## Usage
 
@@ -41,6 +41,9 @@ Run the main script:
 ```
 python -m src.main
 ```
+
+https://github.com/user-attachments/assets/85e004d3-9e46-4d4a-bb91-131a09eb7096
+
 
 The script will authenticate with the Gmail API, fetch emails, store them in the database, and process them according to the defined rules.
 
