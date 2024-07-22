@@ -26,6 +26,7 @@ def main():
         logger.info("Authenticating...")
         authenticator = GmailAuthenticator(config)
         gmail_api_service = GmailServiceFactory.create_service(authenticator)
+
         gmail_service = GmailService(gmail_api_service)
 
         rule_processor = RuleProcessor.from_file(config['RULES_FILE'], gmail_service)
@@ -43,7 +44,7 @@ def main():
                 existing_email = email_repo.get_email_by_message_id(email.message_id)
                 if not existing_email:
                     email_repo.add_email(email)
-                rule_processor.process_email(email)
+                    rule_processor.process_email(email)
         
         logger.info("Rules Applied Successfully!")
     except Exception as e:

@@ -63,6 +63,13 @@ class GmailService:
         decoded_bytes = base64.urlsafe_b64decode(encoded_body)
         return decoded_bytes.decode('utf-8')
 
+
+    def mark_as_read(self, message_id: str) -> None:
+        self.modify_message(message_id, remove_labels=['UNREAD'])
+
+    def mark_as_unread(self, message_id: str) -> None:
+        self.modify_message(message_id, add_labels=['UNREAD'])
+    
     def modify_message(self, message_id: str, add_labels: List[str] = None, remove_labels: List[str] = None) -> None:
         try:
             body = {}
@@ -73,12 +80,6 @@ class GmailService:
             self.service.users().messages().modify(userId=self.USER_ID, id=message_id, body=body).execute()
         except HttpError as error:
             print(f'An error occurred while modifying the message: {error}')
-
-    def mark_as_read(self, message_id: str) -> None:
-        self.modify_message(message_id, remove_labels=['UNREAD'])
-
-    def mark_as_unread(self, message_id: str) -> None:
-        self.modify_message(message_id, add_labels=['UNREAD'])
 
     def move_message(self, message_id: str, label_id: str) -> None:
         label_id = label_id.upper()
